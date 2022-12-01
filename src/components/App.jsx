@@ -6,9 +6,9 @@ import {
   Filter,
 } from 'components';
 import { useState, useMemo, useCallback } from 'react';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import deleteContactContext from './deleteContactContext';
 import useLocalStorage from './hooks/useLocalStorage';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const LS_KEY = 'contacts';
 

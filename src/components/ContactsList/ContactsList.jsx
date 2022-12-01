@@ -20,6 +20,13 @@ const ContactsList = ({ contacts }) => {
   );
 };
 
+export default ContactsList;
+
+ContactsList.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.object),
+  deleteHandler: PropTypes.func,
+};
+
 // const ContactsList = ({ contacts, deleteHandler }) => {
 //   return (
 //     <Wrapper>
@@ -43,9 +50,3 @@ const ContactsList = ({ contacts }) => {
 //   );
 // };
 
-export default ContactsList;
-
-ContactsList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.object),
-  deleteHandler: PropTypes.func,
-};
