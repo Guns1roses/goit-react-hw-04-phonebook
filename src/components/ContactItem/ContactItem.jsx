@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import { Contact, IconUser, Item, Button } from './ContactItem.styled';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import { useContext, memo } from 'react';
+import deleteContactContext from '../deleteContactContext';
 
-const ContactItem = ({ id, name, number, deleteHandler }) => {
+const ContactItem = ({ id, name, number }) => {
+  const deleteHandler = useContext(deleteContactContext);
   return (
     <Item>
       <Contact>
@@ -16,7 +19,22 @@ const ContactItem = ({ id, name, number, deleteHandler }) => {
   );
 };
 
-export default ContactItem;
+// const ContactItem = ({ id, name, number, deleteHandler }) => {
+//   return (
+//     <Item>
+//       <Contact>
+//         <IconUser />
+//         {name} : {number}
+//       </Contact>
+//       <Button onClick={() => deleteHandler(id)} title="Delete" type="button">
+//         <RiDeleteBinLine />
+//       </Button>
+//     </Item>
+//   );
+// };
+
+export default memo(ContactItem);
+// export default ContactItem;
 
 ContactItem.propTypes = {
   id: PropTypes.string,

@@ -3,20 +3,14 @@ import PropTypes from 'prop-types';
 import { ContactItem } from 'components';
 import { Empty, Title, Wrapper } from './ContactsList.styled';
 
-const ContactsList = ({ contacts, deleteHandler }) => {
+const ContactsList = ({ contacts }) => {
   return (
     <Wrapper>
       <Title>Contacts</Title>
       {contacts.length > 0 ? (
         <ul>
           {contacts.map(({ id, name, number }) => (
-            <ContactItem
-              key={id}
-              id={id}
-              name={name}
-              number={number}
-              deleteHandler={deleteHandler}
-            />
+            <ContactItem key={id} id={id} name={name} number={number} />
           ))}
         </ul>
       ) : (
@@ -25,6 +19,29 @@ const ContactsList = ({ contacts, deleteHandler }) => {
     </Wrapper>
   );
 };
+
+// const ContactsList = ({ contacts, deleteHandler }) => {
+//   return (
+//     <Wrapper>
+//       <Title>Contacts</Title>
+//       {contacts.length > 0 ? (
+//         <ul>
+//           {contacts.map(({ id, name, number }) => (
+//             <ContactItem
+//               key={id}
+//               id={id}
+//               name={name}
+//               number={number}
+//               deleteHandler={deleteHandler}
+//             />
+//           ))}
+//         </ul>
+//       ) : (
+//         <Empty>Contact list is empty</Empty>
+//       )}
+//     </Wrapper>
+//   );
+// };
 
 export default ContactsList;
 
